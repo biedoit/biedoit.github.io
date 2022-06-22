@@ -893,50 +893,34 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 30px 0 0 0;
 }
 
-#team .member {
-  text-align: center;
-  margin-bottom: 20px;
+#team .content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
-#team .member .pic {
-  overflow: hidden;
-  text-align: center;
+#team .content .language-img img {
+  width: 60px;
+  height: 60px;
 }
 
-#team .member .pic img {
-  max-width: 100%;
+#team .function {
+  margin-bottom: 1rem;
 }
 
-#team .member .details {
-  background: #f57f17;
-  color: #fff;
-  padding: 15px;
-  border-radius: 0 0 3px 3px;
+#team .content ul {
+  list-style: none;
+  padding: 0;
 }
 
-#team .member h4 {
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-size: 18px;
+#team .content ul li {
+  padding-bottom: 10px;
 }
 
-#team .member span {
-  font-style: italic;
-  display: block;
-  font-size: 13px;
-}
-
-#team .member .social {
-  margin-top: 5px;
-}
-
-#team .member .social a {
-  color: #fff;
-}
-
-#team .member .social i {
-  font-size: 16px;
-  margin: 0 2px;
+#team .content i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #f57f17;
 }
 
 /* Contact Section
@@ -945,9 +929,55 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 30px 0;
 }
 
+#contact .contact-img {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact .contact-img img {
+  margin-left: -15px;
+  max-width: 100%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+#contact .content h2 {
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+}
+
+#contact .content h3 {
+  color: #555;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  font-style: italic;
+}
+
+#contact .content i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #f57f17;
+}
+
+#contact .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact .content ul li {
+  padding-bottom: 10px;
+}
+
 #contact .contact-info {
   margin-bottom: 20px;
   text-align: center;
+  justify-content: center;
 }
 
 #contact .contact-info i {
@@ -980,6 +1010,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #contact .contact-address, #contact .contact-phone, #contact .contact-email {
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+
+  #contact .contact-img img {
+    margin-bottom: 20px;
+  }
+
 }
 
 @media (min-width: 768px) {
