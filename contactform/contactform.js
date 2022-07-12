@@ -89,26 +89,28 @@ jQuery(document).ready(function($) {
       }
     });
     if (ferror) return false;
-    else var str = $(this).serialize();
-    $.ajax({
-      type: "POST",
-      url: "contactform/contactform.php",
-      data: str,
-      success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
-          $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
-        }
-
-      }
-    });
+    else
+    {
+      let name = $('#name').val();
+      let email = $('#email').val();
+      let subject = $('#subject').val();
+      let body_mail = 'From email : '+ email +'\n';
+      body_mail += 'From customer : ' + name +'\n';  
+      body_mail += $('#message').val();
+      // Send mail
+      Email.send({
+        Host : "ans-asia.com",
+        Username : "devphp@ans-asia.com",
+        Password : "ANS72revff",
+        To : 'biedoit.contact@gmail.com',
+        From : "devphp@ans-asia.com",
+        Subject : subject,
+        Body : body_mail
+    }).then(
+      message => alert(message)
+    );
     return false;
+    }
   });
 
 });
